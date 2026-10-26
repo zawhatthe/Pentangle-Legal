@@ -72,7 +72,7 @@
   <div class="container">
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Pentangle &nbsp;·&nbsp; Last updated: February 2026</p>
+    <p class="meta">Pentangle &nbsp;·&nbsp; Last updated: October 2026</p>
 
     <p>
       Pentangle ("we", "us", or "our") is a social shelf-ranking app that lets you
@@ -95,13 +95,21 @@
     categories, rankings, notes) you add, shelves you create, items you send to
     other users, and any profile bio you write.</p>
 
-    <p><strong>Usage information.</strong> We collect standard app-usage data such
-    as which features you use and when. We do not use third-party analytics
-    SDKs.</p>
+    <p><strong>Push notification tokens.</strong> If you turn on notifications, we
+    collect a device push notification token (provided by Apple and delivered to us
+    via Firebase Cloud Messaging) for the purpose of delivering social notifications
+    — such as when another user sends you an item or replies to your message. Tokens
+    are stored against your account in Firestore. Revoking notification permission in
+    iOS Settings stops delivery but does not remove the stored token; it is removed on
+    your next sign-out.</p>
 
-    <p><strong>Device information.</strong> Firebase, our backend provider,
-    automatically records basic technical information (device type, iOS version,
-    app version, crash logs) to help us maintain reliability.</p>
+    <p><strong>Crash reports.</strong> If the app crashes, Firebase Crashlytics
+    (Google) sends us a crash report: what the app was doing when it crashed, plus
+    your device type, iOS version and app version. Crash reports are not linked to
+    your account, and we use them only to find and fix bugs.</p>
+
+    <p>We do not use analytics or advertising SDKs, and we do not track you across
+    other companies' apps or websites.</p>
 
     <h2>2. How We Use Your Information</h2>
 
@@ -112,6 +120,8 @@
       <li>To let you sign in securely via email/password, Apple Sign In, or
       Google Sign In.</li>
       <li>To store your profile photo (uploaded to Firebase Storage).</li>
+      <li>To send you push notifications about items and messages other users send
+      you, if you have granted notification permission.</li>
       <li>To investigate reports of content that violates our guidelines.</li>
       <li>To fix bugs, improve performance, and develop new features.</li>
     </ul>
@@ -127,7 +137,10 @@
     <ul>
       <li>
         <strong>Firebase (Google LLC)</strong> — authentication, database (Firestore),
-        and file storage. Data is stored on Google's servers.
+        file storage, push notification delivery (Firebase Cloud Messaging, which
+        hands notifications to Apple's Push Notification service), and crash
+        reporting (Crashlytics). Data is stored on
+        Google's servers.
         <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>
       </li>
       <li>
@@ -144,9 +157,16 @@
         <a href="https://www.themoviedb.org/privacy-policy" target="_blank" rel="noopener">TMDB Privacy Policy</a>
       </li>
       <li>
-        <strong>Spotify</strong> — music metadata for search results. We do not share
-        user data with Spotify.
-        <a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify Privacy Policy</a>
+        <strong>iTunes Search API (Apple)</strong> — music and podcast metadata for
+        search results. We do not share user data with Apple through this API.
+      </li>
+      <li>
+        <strong>Google Gemini API (Google LLC)</strong> — to make a Pentangle, the
+        titles and creators of two of your top-ranked items, and the titles of items
+        already on your shelf (so it doesn't suggest them again), are sent to
+        Google's Gemini API to find a connected work. Your name, username, email
+        address and account details are not included in these requests.
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
       </li>
       <li>
         <strong>IGDB (Twitch/Amazon)</strong> — video game metadata for search results.
@@ -157,10 +177,6 @@
         <strong>Open Library (Internet Archive)</strong> — book metadata for search
         results. We do not share user data with Open Library.
         <a href="https://archive.org/about/terms.php" target="_blank" rel="noopener">Internet Archive Terms</a>
-      </li>
-      <li>
-        <strong>iTunes Search API (Apple)</strong> — podcast metadata for search
-        results. We do not share user data with Apple through this API.
       </li>
     </ul>
 
